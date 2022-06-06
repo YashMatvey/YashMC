@@ -1,0 +1,11 @@
+using System;
+            Console.WriteLine("Введите дату по Юлианскому календарю");
+            Console.Write("Год: ");
+            int y = int.Parse(Console.ReadLine());
+            Console.Write("Месяц: ");
+            int m = int.Parse(Console.ReadLine());
+            Console.Write("День: ");
+            int d = int.Parse(Console.ReadLine());
+            var DateYl = new DateTime(y, m, d);
+            var DateGr = DateYl.AddDays((m / 100) - ((m / 100) / 4) - 2);
+            Console.WriteLine($"Дата по Григорианскому календарю: {DateGr}");
