@@ -1,0 +1,12 @@
+using System;
+            double V;
+            double p = 0.21;
+            Console.WriteLine("Введите ширину комнаты");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите длинну комнаты");
+            int b = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Введите высоту комнаты");
+            int c = Convert.ToInt32(Console.ReadLine());
+            V = p * a * b * c;
+            Console.WriteLine($"Объем кислорода равен {V}");
+            Console.Read();
