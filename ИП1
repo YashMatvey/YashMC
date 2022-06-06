@@ -1,0 +1,26 @@
+using System;
+            Console.Write("Введите последнее значение промежутка - n: ");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите количество попыток: ");
+            int k = Convert.ToInt32(Console.ReadLine());
+            Random rnd = new Random();
+            int N = rnd.Next(1, n);
+            while (k != 0)
+            {
+                Console.Write("Введите число: ");
+                int Namb = Convert.ToInt32(Console.ReadLine());
+                if (Namb == N)
+                {
+                    Console.WriteLine("Вы угадали!");
+                    Console.ReadLine();
+                    Environment.Exit(0);
+                }
+                if (Namb <= N)
+                    Console.WriteLine("Загаданное число больше");
+                if (Namb >= N)
+                    Console.WriteLine("Загаданное число меньше");
+                k--;
+                Console.WriteLine();
+            }
+            if (k == 0)
+                Console.WriteLine("Попытки закончились");
