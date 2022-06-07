@@ -1,0 +1,54 @@
+using System;
+            int Days = 365;
+            int[] mouhts = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+        daye:
+            Console.WriteLine("Введите день");
+            int day = int.Parse(Console.ReadLine());
+            if (day > 31)
+            {
+                Console.WriteLine("Ошибка: число введено некорректно");
+                goto daye;
+            }
+        mounth:
+            Console.WriteLine("Введите месяц");
+            int mouht = int.Parse(Console.ReadLine());
+            if (mouht > 12)
+            {
+                Console.WriteLine("Ошибка: месяц введен некорректно");
+                goto mounth;
+            }
+            for (int i = 0; i < mouhts.Length; i++)
+            {
+                if (i == (mouht - 1))
+                {
+                    if (mouhts[i] < day)
+                    {
+                        Console.WriteLine("Ошибка: число введено некорректно");
+                        goto daye;
+                    }
+                }
+            }
+            Console.WriteLine("Введите год");
+            int year = int.Parse(Console.ReadLine());
+            int smeshen = 0;
+            int j = mouht - 1;
+            for (int i = 0; i < j; i++)
+            {
+                int k = mouhts[i];
+                smeshen = smeshen + k;
+            }
+            if (year % 4 == 0)
+            {
+                if (year % 400 > 0 || year % 100 == 0)
+                {
+                    goto dd;
+                }
+                smeshen++;
+                Days++;
+            }
+        dd:
+            int kolday = smeshen + day;
+            int koldayEnd = Days - kolday;
+            Console.WriteLine($"Количество дней от начала года {kolday}");
+            Console.WriteLine($"Количество дней до следующего года {koldayEnd}");
+
